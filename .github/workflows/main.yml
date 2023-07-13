@@ -26,4 +26,4 @@ jobs:
       with:
         gradle-version: 7.6.2
     - name: Run build with Gradle Wrapper
-      run: ./gradlew build
+      run: gradle wrapper && ./gradlew build
