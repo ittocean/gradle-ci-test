@@ -22,12 +22,12 @@ jobs:
     steps:
     - name: Checkout project sources
       uses: actions/checkout@v3
-    - name: Setup Gradle
-      uses: gradle/gradle-build-action@v2
-    - name: Setup Gradle Wrapper
-      run: gradle wrapper
     - name: Run Gradle Build
-      run: ./gradlew build
+      uses: gradle/gradle-build-action@v2
+      with:
+        arguments: |
+          wrapper
+          build
     - name: Upload JUnit Results
       uses: actions/upload-artifact@v2
       with:
